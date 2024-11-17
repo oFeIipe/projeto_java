@@ -21,7 +21,7 @@
             if (!usr) {
                 document.getElementById('error_user').innerText = "Por favor, preencha o e-mail.";
                 hasError = true;
-            } else if (!/\S+@\S+\.\S+/.test(usr)) { // Valida formato de e-mail
+            } else if (!/\S+@\S+\.\S+/.test(usr)) { 
                 document.getElementById('error_user').innerText = "Digite um e-mail válido.";
                 hasError = true;
             }
