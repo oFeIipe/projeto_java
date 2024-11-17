@@ -1,0 +1,83 @@
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+   background-image: url(assets/IMG/BG.png);
+}
+
+.shape1, .shape2 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+#login-sec{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #D9D9D9;
+        width: 400px;
+        height: 500px;
+}
+
+.login-box{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textbox_user input{
+    background-color: #939393;
+    padding: 5px;
+    border: none;
+    width: 355px;
+    height: 50px;
+    margin-top: 20%;
+}
+.textbox_pass input{
+    background-color: #939393;
+    padding: 5px;
+    border: none;
+    width: 355px;
+    height: 50px;
+    margin-top: 20px;
+}
+.textbox_email input{
+    background-color: #939393;
+    padding: 5px;
+    border: none;
+    width: 355px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.btn_login{
+    border: none;
+    width: 150px;
+    height: 50px;
+    margin-top: 50px;
+    margin-left: 50%;
+    margin-right: 50%;
+    border-radius: 5%;
+    cursor: pointer;
+}
+
+.btn_register{
+    border: none;
+    width: 150px;
+    height: 50px;
+    margin-left: 50%;
+    margin-right: 50%;
+    margin-top: 10px;
+    border-radius: 5%;
+    cursor: pointer;
+}

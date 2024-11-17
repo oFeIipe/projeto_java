@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="pt">
+    <meta name="language" content="Portuguese">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="style..css">
+    <script>
+        function login() {
+            let usr =  document.getElementById('user_box').value.trim();
+            let pass = document.getElementById('pass_box').value.trim();
+
+
+            document.getElementById('error_user').innerText = "";
+            document.getElementById('error_pass').innerText = "";
+
+            let hasError = false;
+
+            if (!usr) {
+                document.getElementById('error_user').innerText = "Por favor, preencha o e-mail.";
+                hasError = true;
+            } else if (!/\S+@\S+\.\S+/.test(usr)) { // Valida formato de e-mail
+                document.getElementById('error_user').innerText = "Digite um e-mail válido.";
+                hasError = true;
+            }
+
+
+            if (!pass) {
+                document.getElementById('error_pass').innerText = "Por favor, preencha a senha.";
+                hasError = true;
+            }
+
+            if (hasError) {
+                return false;
+            }
+
+            console.log("user -> " + usr);
+            console.log("pass -> " + pass);
+
+            fetch("/api/user/login", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: usr, password: pass })
+            })
+                .then(data => {
+                    if (data.ok) {
+
+                        window.location.href = 'posts.html';
+                    } else {
+                        alert("Erro ao fazer login. Verifique suas credenciais.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</head>
+<body>
+<section id="login-sec">
+    <div class="login-box">
+        <h2>LOGIN</h2>
+        <div class="textbox_user">
+            <input id='user_box' type="text" name="username" placeholder="Email" required style="color: whitesmoke;">
+            <div id="error_user" style="color: red; font-size: 12px;"></div>
+        </div>
+        <div class="textbox_pass">
+            <input id='pass_box' type="password" name="password" placeholder="Senha" required style="color: whitesmoke;">
+            <div id="error_pass" style="color: red; font-size: 12px;"></div>
+        </div>
+        <input type="button" class="btn_login" value="Login" onclick="login()">
+        <button class="btn_register" onclick="window.location.href='register.html'" value="Cadastrar-se">Cadastrar-se</button>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rede Social</title>
+    <link rel="stylesheet" href="posts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">Causa.ly</div>
+    <ul class="nav-links">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#projects">Projetos</a></li>
+        <li><a href="#donate">Doe</a></li>
+        <li><a href="#contact">Contato</a></li>
+    </ul>
+    <button class="btn_logout" onclick="fazerLogout(); window.location.href='index.html'">Logout</button>
+</nav>
+<main class="container">
+    <section class="posts">
+        <form class="post-form" id="postForm" onsubmit="return criarPost(event);">
+            <textarea id="conteudo" placeholder="O que você está pensando?" required></textarea>
+            <button type="submit">Postar</button>
+        </form>
+        <div id="postsContainer">
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <p>Conectando causas, multiplicando impactos.</p>
+    <div class="social-links">
+        <a href="https://www.facebook.com" target="_blank" title="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.twitter.com" target="_blank" title="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+    </div>
+    <a href="/cadastro" class="cta">Junte-se a nós</a>
+    <p>©2024</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
