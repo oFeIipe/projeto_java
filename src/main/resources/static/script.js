@@ -12,7 +12,7 @@ async function carregarUsuarioAtual() {
     try {
         const response = await fetch('http://localhost:8080/api/user/me', {
             method: 'GET',
-            credentials: 'include',  // Para manter a sessão do usuário
+            credentials: 'include',  
         });
 
         if (response.ok) {
@@ -161,7 +161,7 @@ async function fazerLogout() {
 
         if (response.ok) {
             alert('Você foi desconectado com sucesso!');
-            window.location.href = 'index.html'; // Certifique-se de que a página de login exista
+            window.location.href = 'index.html'; 
         } else {
             alert('Erro ao realizar logout. Tente novamente.');
         }
